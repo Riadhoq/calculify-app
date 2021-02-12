@@ -1,3 +1,52 @@
-@namespace Calculify.Components
+@namespace Components
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+        @if(error != null) {
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>This is awkward!</strong> @error
+          </div>
+        }
+    </div>
+    <div class="w-100"></div>  
+    <div class="col-md-4 my-3">
+      <CalculatorDisplay screen="@calculator.Display"/>
+        <div class="calculator-buttons">
+            <button class="btn" @onclick="ToggleSign">+/-</button>
+            <button class="btn" @onclick="Backspace">&LeftArrow;</button>
+            <button class="btn button-mods__c" @onclick="Clear">C</button>
+            <button class="btn button-mods__ac" @onclick="ClearAll">AC</button>
+            <button class="btn button-mods__store" @onclick="EmptyStore">MC</button>
+            <button class="btn button-mods__store" @onclick="AddStore">M+</button>
+            <button class="btn button-mods__store" @onclick="SubtractStore">M-</button>
+            <button class="btn button-mods__store" @onclick="CurrentStore">MR</button>
+            <div class="button-numbers">
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("7"))>7</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("8"))>8</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("9"))>9</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("4"))>4</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("5"))>5</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("6"))>6</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("1"))>1</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("2"))>2</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("3"))>3</button>
+                <button class="btn button-number" @onclick=@(e => HandleButtonClick("0"))>0</button>
+                <button class="btn button-number" @onclick="HandleDot">.</button>
+                <button class="btn" @onclick="Calculate">=</button>
+            </div>
+            <div class="button-operators">
+                <button class="btn button-operator" @onclick=@(e => HandleOperatorClick("+"))>+</button>
+                <button class="btn button-operator" @onclick=@(e => HandleOperatorClick("-"))>-</button>
+                <button class="btn button-operator" @onclick=@(e => HandleOperatorClick("x"))>&times;</button>
+                <button class="btn button-operator" @onclick=@(e => HandleOperatorClick("/"))>÷</button>
+            </div>
+        </div>
 
-<div>Hello</div>
+    </div>
+    @if(@history.Count > 0) {
+      <div class="col-md-4 my-3">
+        <CalculatorHistory history="@history" />
+      </div>
+    }
+  </div>
+</div>

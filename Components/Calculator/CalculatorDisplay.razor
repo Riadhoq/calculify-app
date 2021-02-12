@@ -1,0 +1,8 @@
+@namespace Components
+
+<input type="text" class="calculator-display form-control text-right p-4 mb-3" @bind-value="screen" readonly>
+
+@code {
+  [Parameter]
+  public string screen { get; set; }
+}

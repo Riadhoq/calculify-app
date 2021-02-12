@@ -1,0 +1,16 @@
+@namespace Components
+
+<div class="calculator-history p-4">
+  <ul>
+    @foreach (var historyItem in @history)
+    {
+        <li>@historyItem</li>
+    }
+  </ul>
+</div>
+
+
+@code {
+  [Parameter]
+  public Queue<string> history  { get; set; }
+}

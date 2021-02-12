@@ -1,0 +1,17 @@
+.calculator-history {
+  background-color: #f2e58c;
+  height: 90%;
+  overflow: auto;
+  font-family: monospace;
+}
+
+.calculator-history ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+li {
+  font-size: x-large;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}

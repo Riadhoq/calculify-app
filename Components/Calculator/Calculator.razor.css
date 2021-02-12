@@ -1,0 +1,45 @@
+.btn {
+  background-color: #eaeaea;
+  color: #123;
+  font-size: x-large;
+}
+
+.calculator-buttons {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.button-numbers {
+  grid-column: span 3;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.button-operators {
+  display: grid;
+  gap: 15px;
+}
+
+.button-operator {
+  background: #384259;
+  color: white;
+  font-size: x-large;
+  font-weight: 300;
+}
+
+.button-mods__c {
+  background-color: #fce43d;
+  font-size: inherit;
+}
+
+.button-mods__ac {
+  background-color: #bd5353;
+  color: white;
+  font-size: inherit;
+}
+
+.button-mods__store {
+  font-size: inherit;
+}
